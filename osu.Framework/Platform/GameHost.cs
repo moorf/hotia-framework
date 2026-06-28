@@ -464,6 +464,82 @@ namespace osu.Framework.Platform
 
         private ulong frameCount;
 
+        int CountDrawables(Drawable d)
+        {
+            int count = 1;
+
+            if (d is CompositeDrawable c)
+            {
+                foreach (var child in c.AliveInternalChildren)
+                    count += CountDrawables(child);
+            }
+
+            return count;
+        }
+        Dictionary<string, (int count, int maxDepth)> typeStats = new();
+        private int nextNodeId = 0;
+
+        public class TreeNodeInfo
+        {
+            public int Id { get; set; }
+            public string Type { get; set; }
+            public int Depth { get; set; }
+        }
+
+        public List<TreeNodeInfo> TreeNodes { get; } = new();
+        public class TreeEdge
+        {
+            public int ParentId { get; set; }
+            public int ChildId { get; set; }
+        }
+
+        public List<TreeEdge> TreeEdges { get; } = new();
+        void RecordTypeAndDepth(Drawable d, int depth = 0, int? parentId = null)
+        {
+            if (d == null)
+                return;
+
+            string name = d.GetType().Name;
+
+            // ======== ORIGINAL LOGIC (unchanged) ========
+            if (!typeStats.TryGetValue(name, out var stats))
+            {
+                typeStats[name] = (1, depth);
+            }
+            else
+            {
+                typeStats[name] = (
+                    stats.count + 1,
+                    Math.Max(stats.maxDepth, depth)
+                );
+            }
+            // ============================================
+
+            // ======== NEW TREE LOGIC ========
+            int currentId = nextNodeId++;
+
+            TreeNodes.Add(new TreeNodeInfo
+            {
+                Id = currentId,
+                Type = name,
+                Depth = depth
+            });
+
+            if (parentId.HasValue)
+                TreeEdges.Add(new TreeEdge
+                {
+                    ParentId = parentId.Value,
+                    ChildId = currentId
+                });
+            // =================================
+
+            if (d is CompositeDrawable composite)
+            {
+                foreach (var child in composite.AliveInternalChildren)
+                    RecordTypeAndDepth(child, depth + 1, currentId);
+            }
+        }
+        int ____counter = 0; bool shoulddebug = true;
         protected virtual void UpdateFrame()
         {
             if (Root == null) return;
@@ -484,6 +560,33 @@ namespace osu.Framework.Platform
             TypePerformanceMonitor.NewFrame();
 
             Root.UpdateSubTree();
+            long a = ++____counter;//Stopwatch.GetTimestamp() * 1_000_000 / Stopwatch.Frequency;
+            if (shoulddebug && a % 2000 == 0)
+            {
+                ____counter = 0;
+                int total = CountDrawables(Root);
+                Logger.Log($"Total Root children: {total}");
+
+                typeStats = new();
+                TreeNodes.Clear();
+                TreeEdges.Clear();
+                RecordTypeAndDepth(Root);
+                var export = new
+                {
+                    Nodes = TreeNodes,
+                    Edges = TreeEdges
+                };
+
+                File.WriteAllText(
+                    $"{Stopwatch.GetTimestamp()}.json",
+                    System.Text.Json.JsonSerializer.Serialize(export,
+                        new System.Text.Json.JsonSerializerOptions { WriteIndented = true })
+                );
+                foreach (var x in typeStats)
+                {
+                    Logger.Log($"{x.Key}: c: {x.Value.count} d: {x.Value.maxDepth}");
+                }
+            }
             Root.UpdateSubTreeMasking();
 
             using (var buffer = drawRoots.GetForWrite())

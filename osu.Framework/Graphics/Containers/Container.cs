@@ -132,7 +132,49 @@ namespace osu.Framework.Graphics.Containers
             foreach (var c in Children)
                 array[arrayIndex++] = c;
         }
+        private readonly List<T> suspendedChildren = new List<T>();
+        private readonly Dictionary<T, float> suspendedDepths = new Dictionary<T, float>();
 
+        public void Suspend()
+        {
+            if (Content != this)
+            {
+                Content.Suspend();
+                return;
+            }
+
+            if (suspendedChildren.Count > 0)
+                return;
+
+            suspendedChildren.AddRange(Children);
+
+            foreach (var child in suspendedChildren)
+                suspendedDepths[child] = child.Depth;
+
+            RemoveRange(suspendedChildren, false);
+        }
+
+        public void Resume()
+        {
+            if (Content != this)
+            {
+                Content.Resume();
+                return;
+            }
+
+            if (suspendedChildren.Count == 0)
+                return;
+
+            foreach (var child in suspendedChildren)
+            {
+                Add(child);
+                if (suspendedDepths.TryGetValue(child, out float depth) && depth != child.Depth)
+                    ChangeChildDepth(child, depth);
+            }
+
+            suspendedChildren.Clear();
+            suspendedDepths.Clear();
+        }
         bool ICollection<T>.Remove(T item)
         {
             ArgumentNullException.ThrowIfNull(item);
@@ -542,6 +584,7 @@ namespace osu.Framework.Graphics.Containers
             {
                 container = null;
             }
+
         }
     }
 }
