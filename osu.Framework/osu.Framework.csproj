@@ -3,7 +3,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <OutputType>Library</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyTitle>osu!framework</AssemblyTitle>
+    <AssemblyTitle>hotia!framework</AssemblyTitle>
     <AssemblyName>osu.Framework</AssemblyName>
     <Description>A 2D application/game framework written with rhythm games in mind.</Description>
     <!-- Enabling this breaks iOS projects from building due to silly naming conflicts (https://github.com/dotnet/runtime/issues/79500#issuecomment-1345624309).
@@ -13,7 +13,7 @@
     <DefineConstants>$(DefineConstants);JETBRAINS_ANNOTATIONS</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Label="Nuget">
-    <Title>osu!framework</Title>
+    <Title>hotia!framework</Title>
     <PackageId>ppy.osu.Framework</PackageId>
     <PackageReleaseNotes>Automated release.</PackageReleaseNotes>
     <PackageTags>osu game framework</PackageTags>

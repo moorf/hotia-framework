@@ -23,7 +23,7 @@ namespace osu.Framework
 
         /// <summary>
         /// The IPC pipe name to bind. This should be shared by all instances of
-        /// an osu!framework app that want to perform inter-process communications.
+        /// an hotia!framework app that want to perform inter-process communications.
         /// See <see cref="IIpcHost"/> for more details on usage.
         /// </summary>
         public string? IPCPipeName { get; set; }

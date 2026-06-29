@@ -2,16 +2,16 @@
   <img width="500px" src="assets/o!f Logo Large FC.svg">
 </p>
 
-# osu!framework
+# hotia!framework
 
 [![Build status](https://github.com/ppy/osu-framework/actions/workflows/ci.yml/badge.svg?branch=master&event=push)](https://github.com/ppy/osu-framework/actions/workflows/ci.yml)
 [![GitHub release](https://img.shields.io/github/release/ppy/osu-framework.svg)](https://github.com/ppy/osu-framework/releases/latest)
 [![CodeFactor](https://www.codefactor.io/repository/github/ppy/osu-framework/badge)](https://www.codefactor.io/repository/github/ppy/osu-framework)
 [![dev chat](https://discordapp.com/api/guilds/188630481301012481/widget.png?style=shield)](https://discord.gg/ppy)
 
-A game framework written with [osu!](https://github.com/ppy/osu) in mind.
+A game framework written with [hotia!](https://github.com/ppy/osu) in mind.
 
-## Developing a game using osu!framework
+## Developing a game using hotia!framework
 
 If you are interested in **creating a project** using the framework, please start from the [getting started](https://github.com/ppy/osu-framework/wiki/Setting-up-your-first-project) wiki resources (or jump straight over to the [project templates](https://github.com/ppy/osu-framework/tree/master/osu.Framework.Templates)). You can either start off from an empty project, or take a peek at a working sample game. Either way, full project structure, cross-platform support, and  a testing setup are included!
 
@@ -19,7 +19,7 @@ The rest of the information on this page is related to working *on* the framewor
 
 ## Objectives
 
-This framework is intended to take steps beyond what you would normally expect from a game framework. This means things like basic UI elements, text rendering, advanced input handling (textboxes) and performance overlays are provided out-of-the-box. Any of the osu! code that is deemed useful to other game projects will live in this framework project.
+This framework is intended to take steps beyond what you would normally expect from a game framework. This means things like basic UI elements, text rendering, advanced input handling (textboxes) and performance overlays are provided out-of-the-box. Any of the hotia! code that is deemed useful to other game projects will live in this framework project.
 
 - Anywhere we implement graphical components, they will be displayed with a generic design and will be derivable for further customisation.
 - Common elements used by games (texture caching, font loading) will be automatically initialised at runtime.
@@ -60,9 +60,9 @@ This framework is licensed under the [MIT licence](https://opensource.org/licens
 
 The BASS audio library (a dependency of this framework) is a commercial product. While it is free for non-commercial use, please ensure to [obtain a valid licence](http://www.un4seen.com/bass.html#license) if you plan on distributing any application using it commercially.
 
-## Projects that use osu!framework
+## Projects that use hotia!framework
 
-[osu!](https://github.com/ppy/osu) – rhythm is just a *click* away!
+[hotia!](https://github.com/ppy/osu) – rhythm is just a *click* away!
 
 [GDEdit](https://github.com/gd-edit/GDE) - A third-party Geometry Dash editor.
 

@@ -4,13 +4,13 @@
     <SupportedOSPlatformVersion>21.0</SupportedOSPlatformVersion>
     <OutputType>Library</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyTitle>osu!framework Android</AssemblyTitle>
+    <AssemblyTitle>hotia!framework Android</AssemblyTitle>
     <AssemblyName>osu.Framework.Android</AssemblyName>
     <RootNamespace>osu.Framework.Android</RootNamespace>
     <Description>A 2D application/game framework written with rhythm games in mind.</Description>
   </PropertyGroup>
   <PropertyGroup Label="Nuget">
-    <Title>osu!framework Android</Title>
+    <Title>hotia!framework Android</Title>
     <PackageId>ppy.osu.Framework.Android</PackageId>
     <PackageTags>osu game framework</PackageTags>
   </PropertyGroup>

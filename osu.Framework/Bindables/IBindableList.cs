@@ -39,7 +39,7 @@ namespace osu.Framework.Bindables
         IBindableList<T> GetBoundCopy();
 
         // We want this enumerator to reduce enumeration overhead, but it causes mono / android crashes for silly reasons.
-        // See https://sentry.ppy.sh/share/issue/c7cda39d8ab94897a2bb350059fd3652/
+        // See https://sentry.hotia.org/share/issue/c7cda39d8ab94897a2bb350059fd3652/
 
         // new List<T>.Enumerator GetEnumerator();
     }

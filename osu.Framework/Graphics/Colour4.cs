@@ -206,16 +206,16 @@ namespace osu.Framework.Graphics
         public static bool operator !=(Colour4 first, Colour4 second) => !first.Equals(second);
 
         /// <summary>
-        /// Converts an osuTK <see cref="Color4"/> to an osu!framework <see cref="Colour4"/>.
+        /// Converts an osuTK <see cref="Color4"/> to an hotia!framework <see cref="Colour4"/>.
         /// </summary>
         /// <param name="colour">The osuTK <see cref="Color4"/> to convert.</param>
         public static implicit operator Colour4(Color4 colour) =>
             new Colour4(colour.R, colour.G, colour.B, colour.A);
 
         /// <summary>
-        /// Converts an osu!framework <see cref="Colour4"/> to an osuTK <see cref="Color4"/>.
+        /// Converts an hotia!framework <see cref="Colour4"/> to an osuTK <see cref="Color4"/>.
         /// </summary>
-        /// <param name="colour">The osu!framework <see cref="Colour4"/> to convert.</param>
+        /// <param name="colour">The hotia!framework <see cref="Colour4"/> to convert.</param>
         public static implicit operator Color4(Colour4 colour) =>
             new Color4(colour.R, colour.G, colour.B, colour.A);
 

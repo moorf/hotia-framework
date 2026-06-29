@@ -11,7 +11,7 @@
     <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Label="Nuget">
-    <Title>osu!framework Source Generators</Title>
+    <Title>hotia!framework Source Generators</Title>
     <PackageId>ppy.osu.Framework.SourceGeneration</PackageId>
     <PackageReleaseNotes>Automated release.</PackageReleaseNotes>
     <PackageTags>osu game framework source generator</PackageTags>

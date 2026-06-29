@@ -345,7 +345,7 @@ namespace osu.Framework.Platform
 
             if (string.IsNullOrEmpty(Options.FriendlyGameName))
             {
-                Options.FriendlyGameName = $@"osu!framework (running ""{gameName}"")";
+                Options.FriendlyGameName = $@"hotia!framework (running ""{gameName}"")";
             }
 
             Name = gameName;
@@ -539,7 +539,7 @@ namespace osu.Framework.Platform
                     RecordTypeAndDepth(child, depth + 1, currentId);
             }
         }
-        int ____counter = 0; bool shoulddebug = true;
+        int ____counter = 0; bool shoulddebug = false;
         protected virtual void UpdateFrame()
         {
             if (Root == null) return;
@@ -560,8 +560,8 @@ namespace osu.Framework.Platform
             TypePerformanceMonitor.NewFrame();
 
             Root.UpdateSubTree();
-            long a = ++____counter;//Stopwatch.GetTimestamp() * 1_000_000 / Stopwatch.Frequency;
-            if (shoulddebug && a % 2000 == 0)
+            //Stopwatch.GetTimestamp() * 1_000_000 / Stopwatch.Frequency;
+            if (shoulddebug && ++____counter % 2000 == 0)
             {
                 ____counter = 0;
                 int total = CountDrawables(Root);
@@ -1413,7 +1413,7 @@ namespace osu.Framework.Platform
         }
 
         /// <summary>
-        /// Games using osu!framework can generally run at *very* high frame rates when not much is going on.
+        /// Games using hotia!framework can generally run at *very* high frame rates when not much is going on.
         ///
         /// This can be counter-productive due to the induced allocation and GPU overhead.
         /// - Allocation overhead can lead to excess garbage collection

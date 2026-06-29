@@ -1,4 +1,4 @@
-﻿<!-- Contains required properties for osu!framework projects. -->
+﻿<!-- Contains required properties for hotia!framework projects. -->
 <Project>
   <PropertyGroup Label="C#">
     <LangVersion>12.0</LangVersion>
@@ -46,7 +46,7 @@
     <Authors>ppy Pty Ltd</Authors>
     <Company>ppy Pty Ltd</Company>
     <Copyright>Copyright (c) 2024 ppy Pty Ltd</Copyright>
-    <Product>osu!framework</Product>
+    <Product>hotia!framework</Product>
     <PackageReleaseNotes>Automated release.</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>

@@ -37,7 +37,7 @@ namespace osu.Framework.Platform.MacOS
                 foreach (string path in base.UserStoragePaths)
                     yield return path;
 
-                // Some older builds of osu! incorrectly used ~/.local/share on macOS.
+                // Some older builds of hotia! incorrectly used ~/.local/share on macOS.
                 yield return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".local", "share");
             }
         }
