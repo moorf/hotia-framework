@@ -27,7 +27,7 @@ for arch in "arm64" "simulator-universal"; do
         plutil -create xml1 "$plist_file"
         plutil -insert CFBundleDevelopmentRegion -string en "$plist_file"
         plutil -insert CFBundleExecutable -string "$lib_name" "$plist_file"
-        plutil -insert CFBundleIdentifier -string "sh.ppy.osu.Framework.iOS.$lib_name" "$plist_file"
+        plutil -insert CFBundleIdentifier -string "sh.moorf.hotia.Framework.iOS.$lib_name" "$plist_file"
         plutil -insert CFBundleInfoDictionaryVersion -string '6.0' "$plist_file"
         plutil -insert CFBundleName -string "$lib_name" "$plist_file"
         plutil -insert CFBundlePackageType -string FMWK "$plist_file"

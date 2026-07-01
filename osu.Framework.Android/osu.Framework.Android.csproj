@@ -11,8 +11,8 @@
   </PropertyGroup>
   <PropertyGroup Label="Nuget">
     <Title>hotia!framework Android</Title>
-    <PackageId>ppy.osu.Framework.Android</PackageId>
-    <PackageTags>osu game framework</PackageTags>
+    <PackageId>moorf.hotia.Framework.Android</PackageId>
+    <PackageTags>hotia game framework</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\osu.Framework\osu.Framework.csproj" />

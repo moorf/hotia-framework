@@ -14,9 +14,9 @@
   </PropertyGroup>
   <PropertyGroup Label="Nuget">
     <Title>hotia!framework</Title>
-    <PackageId>ppy.osu.Framework</PackageId>
+    <PackageId>moorf.hotia.Framework</PackageId>
     <PackageReleaseNotes>Automated release.</PackageReleaseNotes>
-    <PackageTags>osu game framework</PackageTags>
+    <PackageTags>hotia game framework</PackageTags>
   </PropertyGroup>
   <ItemGroup Label="Package References">
     <PackageReference Include="FFmpeg.AutoGen" Version="4.3.0.1" />

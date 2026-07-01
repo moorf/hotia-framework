@@ -9,8 +9,8 @@
     <IsPackable>true</IsPackable>
     <Title>hotia!framework Libraries</Title>
     <Description>Native libraries for hotia!framework</Description>
-    <PackageId>ppy.osu.Framework.NativeLibs</PackageId>
-    <PackageTags>osu game framework libraries</PackageTags>
+    <PackageId>moorf.hotia.Framework.NativeLibs</PackageId>
+    <PackageTags>hotiahotia game framework libraries</PackageTags>
     <IncludeBuildOutput>false</IncludeBuildOutput>
   </PropertyGroup>
   <ItemGroup>

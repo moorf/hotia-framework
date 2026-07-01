@@ -43,8 +43,8 @@
     <AnalysisModeUsage>Default</AnalysisModeUsage>
   </PropertyGroup>
   <PropertyGroup Label="NuGet">
-    <Authors>ppy Pty Ltd</Authors>
-    <Company>ppy Pty Ltd</Company>
+    <Authors>moorf</Authors>
+    <Company>moorf</Company>
     <Copyright>Copyright (c) 2024 ppy Pty Ltd</Copyright>
     <Product>hotia!framework</Product>
     <PackageReleaseNotes>Automated release.</PackageReleaseNotes>
