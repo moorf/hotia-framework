@@ -47,7 +47,7 @@ namespace osu.Framework.Input
             }
         }
 
-        private InputManager? parentInputManager;
+        public InputManager? parentInputManager;
 
         protected override void LoadComplete()
         {

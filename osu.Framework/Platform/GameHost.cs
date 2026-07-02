@@ -539,7 +539,7 @@ namespace osu.Framework.Platform
                     RecordTypeAndDepth(child, depth + 1, currentId);
             }
         }
-        int ____counter = 0; bool shoulddebug = true;
+        int ____counter = 0; bool shoulddebug = false;
         protected virtual void UpdateFrame()
         {
             if (Root == null) return;
