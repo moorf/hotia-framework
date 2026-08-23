@@ -5,7 +5,7 @@
 	<key>CFBundleName</key>
 	<string>osu.Framework.Tests.iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>sh.ppy.osu-framework-visual-tests</string>
+	<string>org.moorf.hotia-framework-visual-tests</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

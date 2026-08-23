@@ -27,9 +27,9 @@ namespace osu.Framework.Tests.Visual.Platform
                 {
                     new BasicButton
                     {
-                        Action = () => host.OpenUrlExternally("https://osu.ppy.sh"),
+                        Action = () => host.OpenUrlExternally("https://osu.hotia.org"),
                         Size = new Vector2(150, 30),
-                        Text = "Open osu! site",
+                        Text = "Open hotia! site",
                     },
                     new BasicButton
                     {

@@ -86,7 +86,7 @@ namespace osu.Framework.Platform.Windows
                 statistic_inputs_with_extra_information.Value++;
 
                 // i'm not sure if there is a valid case where we need to handle packets with this present
-                // but the osu!tablet fires noise events with non-zero values, which we want to ignore.
+                // but the hotia!tablet fires noise events with non-zero values, which we want to ignore.
                 // return IntPtr.Zero;
             }
 
@@ -101,11 +101,11 @@ namespace osu.Framework.Platform.Windows
 
                 if (mouse.LastX == 0 && mouse.LastY == 0)
                 {
-                    // not sure if this is the case for all tablets, but on osu!tablet these can appear and are noise.
+                    // not sure if this is the case for all tablets, but on hotia!tablet these can appear and are noise.
                     return IntPtr.Zero;
                 }
 
-                // i am not sure what this 64 flag is, but it's set on the osu!tablet at very least.
+                // i am not sure what this 64 flag is, but it's set on the hotia!tablet at very least.
                 // using it here as a method of determining where the coordinate space is incorrect.
                 if (((int)mouse.Flags & 64) == 0)
                 {

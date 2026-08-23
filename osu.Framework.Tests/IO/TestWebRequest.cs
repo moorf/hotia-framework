@@ -27,7 +27,7 @@ namespace osu.Framework.Tests.IO
     public class TestWebRequest
     {
         private const string default_protocol = "http";
-        private const string invalid_get_url = "a.ppy.shhhhh";
+        private const string invalid_get_url = "a.hotia.orghhhh";
 
         private static readonly string host;
         private static readonly IEnumerable<string> protocols;

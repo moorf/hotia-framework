@@ -292,7 +292,10 @@ namespace osu.Framework.IO.Network
         private async Task internalPerform(CancellationToken cancellationToken = default)
         {
             string url = Url;
-
+            if (url == null)
+            {
+                return;
+            }
             if (!AllowInsecureRequests && !url.StartsWith(@"https://", StringComparison.Ordinal))
             {
                 logger.Add($"Insecure request was automatically converted to https ({Url})");

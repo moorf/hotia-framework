@@ -1,5 +1,9 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
+//
+// Copyright (c) moorf. Modified 2026.
+// Modifications released under the GNU General Public License v3.0.
+// See the LICENCE.GPL3 file in the repository root for full licence text.
 
 #nullable disable
 
@@ -132,7 +136,49 @@ namespace osu.Framework.Graphics.Containers
             foreach (var c in Children)
                 array[arrayIndex++] = c;
         }
+        private readonly List<T> suspendedChildren = new List<T>();
+        private readonly Dictionary<T, float> suspendedDepths = new Dictionary<T, float>();
 
+        public void Suspend()
+        {
+            if (Content != this)
+            {
+                Content.Suspend();
+                return;
+            }
+
+            if (suspendedChildren.Count > 0)
+                return;
+
+            suspendedChildren.AddRange(Children);
+
+            foreach (var child in suspendedChildren)
+                suspendedDepths[child] = child.Depth;
+
+            RemoveRange(suspendedChildren, false);
+        }
+
+        public void Resume()
+        {
+            if (Content != this)
+            {
+                Content.Resume();
+                return;
+            }
+
+            if (suspendedChildren.Count == 0)
+                return;
+
+            foreach (var child in suspendedChildren)
+            {
+                Add(child);
+                if (suspendedDepths.TryGetValue(child, out float depth) && depth != child.Depth)
+                    ChangeChildDepth(child, depth);
+            }
+
+            suspendedChildren.Clear();
+            suspendedDepths.Clear();
+        }
         bool ICollection<T>.Remove(T item)
         {
             ArgumentNullException.ThrowIfNull(item);
@@ -542,6 +588,7 @@ namespace osu.Framework.Graphics.Containers
             {
                 container = null;
             }
+
         }
     }
 }

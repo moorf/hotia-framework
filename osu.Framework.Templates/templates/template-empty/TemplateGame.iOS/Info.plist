@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>sh.ppy.template</string>
+	<string>org.moorf.template</string>
 	<key>CFBundleName</key>
 	<string>FlappyOsu</string>
 	<key>CFBundleDisplayName</key>
-	<string>osu!template</string>
+	<string>hotia!template</string>
 	<key>CFBundleShortVersionString</key>
 	<string>0.1</string>
 	<key>CFBundleVersion</key>

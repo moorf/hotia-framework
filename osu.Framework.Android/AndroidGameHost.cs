@@ -84,7 +84,7 @@ namespace osu.Framework.Android
         /// In <c>AndroidManifest.xml</c>:
         /// <code>
         /// &lt;manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.MyGame" android:installLocation="auto"&gt;
-        ///     &lt;application android:label="osu!framework test"&gt;
+        ///     &lt;application android:label="hotia!framework test"&gt;
         ///          &lt;provider android:name="androidx.core.content.FileProvider"
         ///                    android:authorities="com.example.MyGame.fileprovider"
         ///                    android:grantUriPermissions="true"

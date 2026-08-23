@@ -105,7 +105,7 @@ namespace osu.Framework.Android
          *
          * This will only work with games using this framework as long as said games use the file paths provided to them as temporary pointers to a piece of data
          * and not as persistent identifiers which should work forever.
-         * That assumption happens to hold with osu!; not so much with other potential games.
+         * That assumption happens to hold with hotia!; not so much with other potential games.
          * To this end, the temporary hack directory is purged on every game launch in order to rather loudly fail if someone starts to lean on these hack paths.
          */
 

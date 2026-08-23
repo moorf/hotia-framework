@@ -163,13 +163,13 @@ The greedy mode using the character - (e.g {{- or -}}), removes any whitespace, 
         [Test]
         public void TestLink()
         {
-            AddStep("MarkdownLink", () => { markdownContainer.Text = @"[click the circles to the beat](https://osu.ppy.sh)"; });
+            AddStep("MarkdownLink", () => { markdownContainer.Text = @"[click the circles to the beat](https://osu.hotia.org)"; });
         }
 
         [Test]
         public void TestImage()
         {
-            AddStep("MarkdownImage", () => { markdownContainer.Text = @"![peppy!](https://a.ppy.sh/2)"; });
+            AddStep("MarkdownImage", () => { markdownContainer.Text = @"![peppy!](https://a.hotia.org/2)"; });
         }
 
         [Test]

@@ -88,7 +88,7 @@ namespace osu.Framework.Tests.Visual.Localisation
                 var beatmap = new RomanisableString(
                     "ELFENSJóN - ASH OF ROUGE (HeTo's Normal)",
                     "ELFENSJoN - ASH OF ROUGE (HeTo's Normal)");
-                const string mode = "osu!";
+                const string mode = "hotia!";
 
                 textFlowContainer.AddText(new TranslatableString(rank, rank_default, player, rankAchieved, beatmap, mode));
                 textFlowContainer.NewParagraph();

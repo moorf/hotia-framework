@@ -15,7 +15,7 @@ using static SDL.SDL3;
 namespace osu.Framework.iOS
 {
     /// <summary>
-    /// Base <see cref="UIApplicationDelegate"/> implementation for osu!framework applications.
+    /// Base <see cref="UIApplicationDelegate"/> implementation for hotia!framework applications.
     /// </summary>
     public abstract class GameApplicationDelegate : UIResponder, IUIApplicationDelegate
     {

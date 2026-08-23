@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>sh.ppy.FlappyDon</string>
+	<string>org.moorf.FlappyDon</string>
 	<key>CFBundleName</key>
 	<string>FlappyDon</string>
 	<key>CFBundleDisplayName</key>
-	<string>Flappy osu!</string>
+	<string>Flappy hotia!</string>
 	<key>CFBundleShortVersionString</key>
 	<string>0.1</string>
 	<key>CFBundleVersion</key>

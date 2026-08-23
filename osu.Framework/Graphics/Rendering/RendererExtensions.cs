@@ -100,7 +100,7 @@ namespace osu.Framework.Graphics.Rendering
             long area = (long)vertexTriangle.Area;
 
             // Area may incorrect return a negative value, so guard against that case for now.
-            // See https://sentry.ppy.sh/organizations/ppy/issues/5739.
+            // See https://sentry.hotia.org/organizations/ppy/issues/5739.
             if (area > 0)
                 FrameStatistics.Add(StatisticsCounterType.Pixels, area);
         }
@@ -184,7 +184,7 @@ namespace osu.Framework.Graphics.Rendering
             long area = (long)vertexQuad.Area;
 
             // Area may incorrect return a negative value, so guard against that case for now.
-            // See https://sentry.ppy.sh/organizations/ppy/issues/5739.
+            // See https://sentry.hotia.org/organizations/ppy/issues/5739.
             if (area > 0)
                 FrameStatistics.Add(StatisticsCounterType.Pixels, area);
         }

@@ -1635,6 +1635,8 @@ namespace osu.Framework.Graphics
         /// </summary>
         public virtual DrawColourInfo DrawColourInfo => drawColourInfoBacking.IsValid ? drawColourInfoBacking : drawColourInfoBacking.Value = computeDrawColourInfo();
 
+
+
         private DrawColourInfo computeDrawColourInfo()
         {
             DrawColourInfo ci = Parent?.DrawColourInfo ?? new DrawColourInfo(null);

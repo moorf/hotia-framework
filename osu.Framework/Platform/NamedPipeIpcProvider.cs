@@ -62,7 +62,7 @@ namespace osu.Framework.Platform
                 string name = $"osu-framework-{pipeName}";
 
                 // Named pipes from different processes are allowed to coexist, but we don't want this for our purposes.
-                // Using a system global mutex allows ensuring that only one osu!framework project using the same pipe name
+                // Using a system global mutex allows ensuring that only one hotia!framework project using the same pipe name
                 // will be able to bind.
                 mutex = new Mutex(false, $"Global\\{name}", out bool createdNew);
 

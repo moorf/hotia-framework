@@ -3,7 +3,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <OutputType>Library</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyTitle>osu!framework</AssemblyTitle>
+    <AssemblyTitle>hotia!framework</AssemblyTitle>
     <AssemblyName>osu.Framework</AssemblyName>
     <Description>A 2D application/game framework written with rhythm games in mind.</Description>
     <!-- Enabling this breaks iOS projects from building due to silly naming conflicts (https://github.com/dotnet/runtime/issues/79500#issuecomment-1345624309).
@@ -13,19 +13,20 @@
     <DefineConstants>$(DefineConstants);JETBRAINS_ANNOTATIONS</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Label="Nuget">
-    <Title>osu!framework</Title>
-    <PackageId>ppy.osu.Framework</PackageId>
+    <Title>hotia!framework</Title>
+    <PackageId>moorf.hotia.Framework</PackageId>
     <PackageReleaseNotes>Automated release.</PackageReleaseNotes>
-    <PackageTags>osu game framework</PackageTags>
+    <PackageTags>hotia game framework</PackageTags>
   </PropertyGroup>
   <ItemGroup Label="Package References">
     <PackageReference Include="FFmpeg.AutoGen" Version="4.3.0.1" />
+    <PackageReference Include="ManagedBass.Asio" Version="4.0.2" />
+    <PackageReference Include="ManagedBass.Fx" Version="4.0.2" />
+    <PackageReference Include="ManagedBass.Mix" Version="4.0.2" />
+    <PackageReference Include="ManagedBass.Wasapi" Version="4.0.2" />
     <PackageReference Include="Microsoft.Extensions.ObjectPool" Version="10.0.11" />
+    <PackageReference Include="moorf.hotia.Framework.NativeLibs" Version="1.0.0" />
     <PackageReference Include="ppy.managed-midi" Version="1.10.2" />
-    <PackageReference Include="ppy.ManagedBass" Version="2022.1216.0" />
-    <PackageReference Include="ppy.ManagedBass.Fx" Version="2022.1216.0" />
-    <PackageReference Include="ppy.ManagedBass.Mix" Version="2022.1216.0" />
-    <PackageReference Include="ppy.ManagedBass.Wasapi" Version="2022.1216.0" />
     <PackageReference Include="ppy.Veldrid" Version="4.9.69-ga405fe8484" />
     <PackageReference Include="ppy.Veldrid.SPIRV" Version="1.0.15-g5911265ec3" />
     <PackageReference Include="SharpFNT" Version="2.0.0" />
@@ -39,11 +40,8 @@
     <PackageReference Include="ppy.SDL2-CS" Version="1.0.741-alpha" />
     <PackageReference Include="ppy.SDL3-CS" Version="2026.722.0" />
     <PackageReference Include="ppy.osu.Framework.SourceGeneration" Version="2025.1121.1" />
-
     <!-- DO NOT use ProjectReference for native packaging project.
          See https://github.com/NuGet/Home/issues/4514 and https://github.com/dotnet/sdk/issues/765 . -->
-    <PackageReference Include="ppy.osu.Framework.NativeLibs" Version="2025.806.0-nativelibs" />
-
     <!-- Any version ahead of this will cause AOT issues with iOS
          See https://github.com/mono/mono/issues/21188 -->
     <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="2.0.161401" />
