@@ -234,9 +234,11 @@ namespace osu.Framework.Threading
 
             if (useExperimentalWasapi)
             {
-                // Need to do more testing. Users reporting buffer underruns even with a large (20ms) buffer.
-                // Also playback latency improvements are not present across all users.
-                // attemptWasapiInitialisation();
+                attemptWasapiInitialisation();
+            }
+            else
+            {
+                freeWasapi();
             }
 
             initialised_bass_devices.Add(deviceId);
