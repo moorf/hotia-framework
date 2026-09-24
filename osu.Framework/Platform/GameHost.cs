@@ -246,8 +246,7 @@ namespace osu.Framework.Platform
             thread.IsActive.BindTo(IsActive);
             thread.UnhandledException = unhandledExceptionHandler;
 
-            if (thread.Monitor != null)
-                thread.Monitor.EnablePerformanceProfiling = PerformanceLogging.Value;
+            thread.Monitor?.EnablePerformanceProfiling = PerformanceLogging.Value;
         }
 
         /// <summary>
@@ -295,8 +294,7 @@ namespace osu.Framework.Platform
             set
             {
                 maximumDrawHz = value;
-                if (DrawThread != null)
-                    DrawThread.ActiveHz = maximumDrawHz;
+                DrawThread?.ActiveHz = maximumDrawHz;
             }
         }
 
@@ -315,8 +313,7 @@ namespace osu.Framework.Platform
             set
             {
                 threadRunner.MaximumInactiveHz = UpdateThread.InactiveHz = maximumInactiveHz = value;
-                if (DrawThread != null)
-                    DrawThread.InactiveHz = maximumInactiveHz;
+                DrawThread?.InactiveHz = maximumInactiveHz;
             }
         }
 
@@ -578,7 +575,7 @@ namespace osu.Framework.Platform
         {
             Renderer.SwapBuffers();
 
-            if (Window.GraphicsSurface.Type == GraphicsSurfaceType.OpenGL && Renderer.VerticalSync)
+            if (Window.GraphicsSurface.Type == GraphicsSurfaceType.OpenGL && Renderer.VerticalSync && RuntimeInfo.OS != RuntimeInfo.Platform.Android)
                 // without waiting (i.e. glFinish), vsync is basically unplayable due to the extra latency introduced.
                 // we will likely want to give the user control over this in the future as an advanced setting.
                 Renderer.WaitUntilIdle();
@@ -1284,8 +1281,7 @@ namespace osu.Framework.Platform
             {
                 Threads.ForEach(t =>
                 {
-                    if (t.Monitor != null)
-                        t.Monitor.EnablePerformanceProfiling = logging.NewValue;
+                    t.Monitor?.EnablePerformanceProfiling = logging.NewValue;
                 });
                 DebugUtils.LogPerformanceIssues = logging.NewValue;
                 TypePerformanceMonitor.Active = logging.NewValue;
