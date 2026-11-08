@@ -50,7 +50,7 @@
     <PackageReleaseNotes>Automated release.</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/ppy/osu-framework</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/ppy/osu-framework</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/moorf/hotia-framework</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/moorf/hotia-framework</RepositoryUrl>
   </PropertyGroup>
 </Project>
